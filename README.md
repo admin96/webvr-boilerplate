@@ -1,6 +1,6 @@
 # WebVR Park
 
-A simple webvr demo built using [THREE.js][three]-based starting point for VR experiences that work well in
+A simple webvr demo built using a [THREE.js][three]-based starting point for VR experiences that works well in
 both Google Cardboard and other VR headsets. Also provides a fallback for
 experiencing the same content without requiring a VR device.
 
