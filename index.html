@@ -116,32 +116,26 @@ controls.standing = true;
 var effect = new THREE.VREffect(renderer);
 effect.setSize(window.innerWidth, window.innerHeight);
 
-
-// Add a repeating grid as a skybox.
-var boxSize = 5;
 var loader = new THREE.TextureLoader();
-loader.load('img/box.png', onTextureLoaded);
+// img source: http://www.sphericalvisions.com/brighton/queens_park/QueensPark.m.jpg
+loader.load("img/QueensPark.m.jpg", loadPark);
 
-function onTextureLoaded(texture) {
-  texture.wrapS = THREE.RepeatWrapping;
-  texture.wrapT = THREE.RepeatWrapping;
-  texture.repeat.set(boxSize, boxSize);
+function loadPark(texture)
+{
+	//create a sphere — we’ll use the inner surface to project our park image on to it
+	var geometry = new THREE.SphereGeometry(50, 200, 200);
 
-  var geometry = new THREE.BoxGeometry(boxSize, boxSize, boxSize);
-  var material = new THREE.MeshBasicMaterial({
-    map: texture,
-    color: 0x01BE00,
-    side: THREE.BackSide
-  });
+	// create the material, using a texture of park
+	var material = new THREE.MeshBasicMaterial({
+		map: texture,
+		side: THREE.BackSide
+	});
 
-  // Align the skybox to the floor (which is at y=0).
-  skybox = new THREE.Mesh(geometry, material);
-  skybox.position.y = boxSize/2;
-  scene.add(skybox);
-
-  // For high end VR devices like Vive and Oculus, take into account the stage
-  // parameters provided.
-  setupStage();
+	// create the mesh based on geometry and material
+	var mesh = new THREE.Mesh(geometry, material);
+	var skybox = new THREE.Mesh(geometry, material);
+	scene.add(skybox);
+	setupStage();
 }
 
 
