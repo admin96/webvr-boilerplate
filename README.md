@@ -1,6 +1,6 @@
-# WebVR Boilerplate
+# WebVR Park
 
-A [THREE.js][three]-based starting point for VR experiences that work well in
+A simple webvr demo built using [THREE.js][three]-based starting point for VR experiences that work well in
 both Google Cardboard and other VR headsets. Also provides a fallback for
 experiencing the same content without requiring a VR device.
 
@@ -42,25 +42,16 @@ modes.
 As a convenience, the WebVRManager emits certain `modechange` events, which can
 be subscribed using `manager.on('modechange', callback)`.
 
-
-## Getting started
-
-The easiest way to start is to fork this repository or copy its contents into a
-new directory.
-
-The boilerplate is also available via npm. Easy install:
-
-    npm install webvr-boilerplate
-
-
 ## Thanks
 
+- [Road To VR][vr] for their demo
 - [Brandon Jones][bj] and [Vladimir Vukicevic][vv] for their work on the [WebVR
   spec][spec].
 - [Ricardo Cabello][doob] for THREE.js.
 - [Diego Marcos][dm] for VREffect and VRControls.
 - [Dmitriy Kovalev][dk] for help with [lens distortion correction][distortion].
 
+[vr]: http://www.roadtovr.com/4-steps-to-start-experimenting-with-webvr-in-10-minutes/
 [dk]: https://github.com/dmitriykovalev/
 [distortion]: https://github.com/borismus/webvr-polyfill/blob/master/src/distortion/distortion.js
 [bj]: https://twitter.com/tojiro
